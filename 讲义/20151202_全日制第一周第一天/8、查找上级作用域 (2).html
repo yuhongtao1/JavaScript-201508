@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+    var total = 100;//先开辟一个全局作用域进行预解释遇到var 和function .var 是进行与解释function预解释加定义return后面的相当于一个值不用进行预解释 return下边的直接执行
+    //这个题先开辟一个全局作用域
+    /*
+    * 1、进行预解释
+    * var total
+    * function进行预解释和定义function=xxxfff000
+    * var f
+    * 2、从上到下执行
+    * total定义total=100
+    *
+    *
+    *
+    * **/
+    function fn() {
+        var total = 10;
+        return function () {
+            console.log(total);
+        }
+    }
+    var f = fn();
+    f();
+    //输出的结果是 10 还是 100 ? 为什么 ?
+
+
+</script>
+</body>
+</html>
